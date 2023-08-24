@@ -3,6 +3,7 @@ import {useState, createContext, useContext, useEffect} from "react";
 import Link from "next/link";
 import {toast} from "react-toastify";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export const Context = createContext({user: {}})
 export const ContextProvider = ({children}) => {
@@ -40,6 +41,7 @@ export const LogOutBtn = () => {
 }
 
 export const ToDoButton = ({id, completed}) => {
+    const router = useRouter()
     const deleteHandler = async (id) => {
         try{
             const {data} = await axios.delete(`/api/deletetask?id=${id}`)
