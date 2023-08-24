@@ -24,6 +24,7 @@ export const ContextProvider = ({children}) => {
 }
 export const LogOutBtn = () => {
     const {user, setUser} = useContext(Context)
+    const router = useRouter()
     const logoutHandler = async (e) => {
         e.preventDefault()
         try{
