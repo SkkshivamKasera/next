@@ -29,6 +29,7 @@ export const LogOutBtn = () => {
         try{
             const {data} = await axios.get("/api/logout")
             toast(data.message)
+            router.refresh()
             setUser({})
         }catch(error){
             toast.error(error.message)
@@ -46,6 +47,7 @@ export const ToDoButton = ({id, completed}) => {
         try{
             const {data} = await axios.delete(`/api/deletetask?id=${id}`)
             toast(data.message)
+            router.refresh()
         }catch(error){
             toast.error(error.response.data.message)
         }
