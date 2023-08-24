@@ -6,7 +6,7 @@ import React from 'react'
 
 const fetchToDo = async (token) => {
     try{
-      const {data} = await axios.get(`${process.env.URL}/api/mytasks`, {
+      const {data} = await axios.get(`${process.env.UR}/api/mytasks`, {
         cache: "no-cache",
         headers: {
           cookie: `token=${token}`
