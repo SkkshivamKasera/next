@@ -31,6 +31,7 @@ export const LogOutBtn = () => {
             toast(data.message)
             router.refresh()
             setUser({})
+            router.refresh()
         }catch(error){
             toast.error(error.message)
         }
